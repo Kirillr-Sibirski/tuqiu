@@ -25,12 +25,12 @@ export default function Home() {
     console.log(connectedAccount)
     const options = {
       method: 'GET',
-      url: `https://api.nftport.xyz/v0/accounts/${connectedAccount}`,
-      // url: 'https://api.nftport.xyz/v0/accounts/0xAB49C15deB2a4c51505b91634B36a988b495c724',
+      // url: `https://api.nftport.xyz/v0/accounts/${connectedAccount}`,
+      url: 'https://api.nftport.xyz/v0/accounts/0xAB49C15deB2a4c51505b91634B36a988b495c724',
       params: {
         chain: 'ethereum',
-        // account_address: '0xAB49C15deB2a4c51505b91634B36a988b495c724',
-        account_address: connectedAccount,
+        account_address: '0xAB49C15deB2a4c51505b91634B36a988b495c724',
+        // account_address: connectedAccount,
         continuation: '\'\'',
         include: 'metadata'
       },
@@ -127,7 +127,7 @@ export default function Home() {
             selectedNFTName === undefined 
             ? <SelectAnNFT />
             // : <gameWIP className="bg-slate-50 border-black border-8 rounded-lg flex grow w-80"/>
-            : <div className="bg-slate-50 border-black border-8 rounded-lg flex flex-col justify-around items-center grow w-80">
+            : <div className="bg-slate-50 border-black border-8 rounded-lg flex flex-col justify-around items-center grow w-2/3">
                 Game goes here
                 <img 
                   src={selectedNFTImage} 
@@ -138,7 +138,7 @@ export default function Home() {
           
         </div>
         <div className="flex flex-col justify-center items-center">
-          <p className="font-mono">Created for BuildQuest by: </p>  
+          <p className="font-mono">Created for BuildQuest by:  The PaddleCrushers</p>  
         </div>
       </div>
     )

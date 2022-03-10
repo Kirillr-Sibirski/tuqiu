@@ -87,23 +87,22 @@ export default function Home() {
     return (
       <div className="flex flex-col justify-center items-center">
         <p className="pb-4 font-mono">
-          {NFTsFetched ? 'Now choose an NFT to play with by clicking its image' : 'Click the button below to fetch your ETH NFTs'}
+          {NFTsFetched ? 'Now choose an NFT to play with by clicking one below.' : 'Click the button below to fetch your ETH NFTs.'}
         </p>
         <PrimaryButton onClick={() => fetchNFTs()}>Fetch NFTs</PrimaryButton>
         { 
-          fetchingNFT == true && NFTsFetched == false //&& userNFTs.length == 0
+          fetchingNFT == true && NFTsFetched == false
           ? <p>Fetching....</p>
           : userNFTs.map((nft) => 
             <div 
               key={nft.token_id}
-              className="border-black border-8 rounded-lg p-2 bg-slate-50 flex flex-row items-center m-2"
-            >
+              className="border-black border-8 rounded-lg p-2 bg-slate-50 flex flex-row items-center m-2 cursor-pointer"
+              onClick={ () => selectNFT(nft) }
+              >
               <img 
-                className="cursor-pointer" 
-                src={nft.metadata.image} 
-                width="64" height="64" 
-                onClick={ () => selectNFT(nft) }
-              />
+                className="cursor-pointer h-20"
+                src={nft.metadata.image}
+                />
               <p className="pl-4 font-mono" id={nft.token_id}>{nft.name}</p>
             </div>
           )

@@ -25,12 +25,14 @@ export default function Home() {
     console.log(connectedAccount)
     const options = {
       method: 'GET',
-      // url: `https://api.nftport.xyz/v0/accounts/${connectedAccount}`,
-      url: 'https://api.nftport.xyz/v0/accounts/0xAB49C15deB2a4c51505b91634B36a988b495c724',
+      url: `https://api.nftport.xyz/v0/accounts/${connectedAccount}`,
+      // url: 'https://api.nftport.xyz/v0/accounts/0xAB49C15deB2a4c51505b91634B36a988b495c724',
+      // url: 'https://api.nftport.xyz/v0/accounts/0xd859d7d8603D2dAb768D679eEEC25930C8FC59C1',
       params: {
         chain: 'ethereum',
-        account_address: '0xAB49C15deB2a4c51505b91634B36a988b495c724',
-        // account_address: connectedAccount,
+        // account_address: '0xAB49C15deB2a4c51505b91634B36a988b495c724',
+        // account_address:  '0xd859d7d8603D2dAb768D679eEEC25930C8FC59C1',
+        account_address: connectedAccount,
         continuation: '\'\'',
         include: 'metadata'
       },
@@ -43,6 +45,11 @@ export default function Home() {
       console.log(response.data);
       if (response.data.nfts.length === 0) {
         setHasNFT(false);
+        setUserNFTs([{"token_id": "Nada", 
+        "name": "You don't have any NFTs, but you can still play along.",
+        "metadata": {
+          "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Magritte1-1-2008.jpg"
+        }}])
       }
       else {
         setHasNFT(true);
@@ -84,7 +91,7 @@ export default function Home() {
         </p>
         <PrimaryButton onClick={() => fetchNFTs()}>Fetch NFTs</PrimaryButton>
         { 
-          fetchingNFT == true && NFTsFetched == false && userNFTs.length == 0
+          fetchingNFT == true && NFTsFetched == false //&& userNFTs.length == 0
           ? <p>Fetching....</p>
           : userNFTs.map((nft) => 
             <div 

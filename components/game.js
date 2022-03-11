@@ -464,7 +464,7 @@ export default class Game extends React.Component {
         <div className="intro">
           <h2>Brick breaker</h2>
           Use <img height="20" alt="" src={left}/> and <img height="20" alt="" src={right}/> to move the paddle,
-          <img height="20" alt="" src={space}/> to shot.
+          <img height="20" alt="" src={space}/> to shoot.
         </div>
         <div className="game-board">
           <Board

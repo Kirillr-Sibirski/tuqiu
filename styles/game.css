@@ -90,7 +90,8 @@
   }
   
   .paddle, .paddle-right, .paddle-left {
-    background-color: #B0C4DE;
+    /* background-color: #B0C4DE; */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/13/Magritte1-1-2008.jpg");
   }
   
   .paddle-left {

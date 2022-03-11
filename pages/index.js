@@ -4,10 +4,7 @@ import { ethers } from 'ethers';
 import axios from "axios";
 import PrimaryButton from '../components/primary-button';
 import Game from '../components/game';
-// import { UserCircleIcon } from "@heroicons/react/solid"
-// import abi from '../utils/Keyboards.json';
-// import addressesEqual from "../utils/addressesEqual";
-// import getKeyboardsContract from "../utils/getKeyboardsContract"
+import Game2 from "../components/game2";
 
 export default function Home() {
 
@@ -133,7 +130,7 @@ export default function Home() {
           { 
             selectedNFTName === undefined 
             ? <SelectAnNFT />
-            : <Game />
+            : <Game2 selectedNFTImage={selectedNFTImage} />
             // : <gameWIP className="bg-slate-50 border-black border-8 rounded-lg flex grow w-80"/>
             // : <div className="bg-slate-50 border-black border-8 rounded-lg flex flex-col justify-around items-center grow w-2/3">
             //     Game goes here

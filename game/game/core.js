@@ -2,8 +2,8 @@ import Vector from './vector'
 import { flatten, getRandomFrom, withoutElement, updateElement } from '../utils'
 
 const PADDLE_AREA = 1 / 3
-const BLOCK_HEIGHT = 1 / 3
-const PADDLE_HEIGHT = 2
+const BLOCK_HEIGHT = 1
+const PADDLE_HEIGHT = 1/3
 const BALL_RADIUS = 1 / 5
 const DISTANCE_IN_MS = 0.005
 

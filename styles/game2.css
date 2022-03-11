@@ -16,9 +16,10 @@
   }
   
   .paddle {
-    fill: #3498db;
-    width: 200px;
-    height: 200px;
+    fill: #db3434;
+    opacity: 0.5;
+    /* width: 2em; */
+    /* height: 2em; */
   }
   
   .ball {
